@@ -22,7 +22,17 @@ const customerRouter = require('./routes/customerRouter');
 const vendorRouter = require('./routes/vendorRouter');
 const snackRouter = require('./routes/snackRouter');
 const orderRouter = require('./routes/orderRouter');
-
+// app.get('/', (req, res) => {
+//     console.log(__dirname,"__dirname")    
+// 	var options = {
+//         root: __dirname+'/product/',    
+// 		// headers: {
+// 		//   "Content-Type": "text/html"
+// 		// }
+// 	}
+// 	res.sendFile('index.html',options, function(error){
+// 	});
+// });
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -81,7 +91,7 @@ app.use('/customer', customerRouter);
 app.use('/vendor', vendorRouter);
 app.use('/snack', snackRouter);
 app.use('/order', orderRouter);
-
+app.use(express.static(__dirname+"/product",{index:"index.html"}))
 server.listen(process.env.PORT || 8080, () => {
     console.log("Snacks in a van app is running!")
 })

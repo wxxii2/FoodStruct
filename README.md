@@ -35,22 +35,12 @@
 
 5. other notes
     - food collection
-        there are 8 snacks with their "_id", "name", "picture", "price"
+        there are 8 snacks with their "_id", "foodid", "foodprice", "food_detail" and "foodpicture"
     - order collection
-        orders contains customer infomation of who submit the order "customer", vendor who receive the order "vendor", 
-        snack array that contain foodname, quantity, price "snack", status of the order "status", 
-        rating of the order "ratings", comment of the order "comment", total price of the order "total", 
-        and whether is is discounted "discount", and the id of the order ""
+        there are 5 orders already in the collection for check with "_id", 8 snacks name, "status" and "orderid"(there is also "__v" cause there are some orders added by postman)
     - vendor collection
-        Vendor is displayed with "_id", vendor name "name", "location" which is a arry contain coordinates according to 
-        [latitude, longtitude], "password", textaddress, "parked" as a status of parking. If the vendor unpark their
-        car, the location will be set to a empty array.
-
-    - register
-        one can easily register by enter new email and password and press register button, the family name and given name
-        will be set to default first, one can then change it in the profile.
-        
+        there are 5 vendors already in the collection for check with "_id", "Vendorid", "Location" and "Status".(there is also "__v")
+    - timezone
+        noticed that the order created in local and heroku maybe different (only createdAt) due to the different timezone
     - wrong user name/password
-        if customers input nonexistent username/wrong password, a message will be shown to notify them. 
-
-
+        if customers input nonexistent username/wrong password, they will be redirected to the welcome page. 
